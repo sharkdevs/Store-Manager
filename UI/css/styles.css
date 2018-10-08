@@ -1,0 +1,58 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #0aacad;
+
+}
+.container{
+    width: 100%;
+    margin: 50px auto;
+    padding-left: 50px;
+}
+.col-3{
+    width:380px;
+    margin: auto;
+    float: left;
+    margin: 0 20px;
+}
+.img-holder img{
+    width: 100%;
+}
+.orange{
+    color: #ffa500;
+}
+.login-main h1{
+    color: antiquewhite;
+    font-family:'Segeo Ui','Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+.login-main{
+    color: aliceblue;
+    font-family: Ubuntu, 'Open Sans', sans-serif;
+    
+}
+.login-center{
+    padding-left: 30px;
+    padding-top: 60px;
+}
+
+/* styling for the right column containing login form */
+.col-form{
+    background-color:#f0f3f3;
+    height: 380px;
+    border-radius: 5px;
+    width: 78%;
+    box-shadow: 2px 2px 3px 6px #0aaccc;
+    padding: 20px;
+    z-index: 1000;
+    color: orange
+    
+}
+.col-form h3{
+    color: black;
+    text-transform: uppercase;
+}
+.col-form hr{
+    border: 0;
+    border-bottom: 1px dashed orangered;
+}
