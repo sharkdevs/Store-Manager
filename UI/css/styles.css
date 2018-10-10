@@ -2,11 +2,16 @@ body{
     height: 100%;
     width: 100%;
     
-
+margin: 0px !important;
 }
 .row{
     width: 100%;
     padding: 5px 0;
+}
+.cart-body{
+    /* background-color: #f8f9fa; */
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
 }
 
 .login-body{
@@ -101,14 +106,14 @@ input[type=email], input[type=password]{
 .left-nav-bar{
     width: 0;
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     z-index: 1;
     background-color: #fdfdfd;
     overflow: hidden;
     transition: 0.5s;
-    height: 100%;
-    padding-top: 60px;
+    height:auto;
+    box-shadow: 0px 4px 12px 0px #59533c, 0px 6px, 0px 0px #0aacad;
 }
 .left-nav-bar a{
     list-style: none;
@@ -121,6 +126,9 @@ input[type=email], input[type=password]{
     text-transform: uppercase;
     border-bottom: 0.5px solid;
     color:#59533c;
+}
+.left-nav-bar a:nth-child(5n){
+    border-bottom: none;
 }
 .left-nav-bar a:hover{
     color: #ffa500;
@@ -137,7 +145,7 @@ input[type=email], input[type=password]{
 
 .cart-top-nav{
     height: 60px;
-    background-color: #0aacad
+    background-color: #fff;
 }
 .cart-top-nav i{
     vertical-align: middle;
@@ -161,7 +169,7 @@ input[type=email], input[type=password]{
 
 .img-rounded{
     border-radius: 50%;
-    background-color: grey;
+    background-color: #f8f9fa;
 }
 .logged-in-user .img-rounded{
     
@@ -186,8 +194,111 @@ input[type=email], input[type=password]{
 .cart-inventory-nav ul li{
     display: inline-block;
     list-style: none;
-    padding: 3px 5px;
-    background-color: gray;
+    padding: 5px 5px;
+    background-color: white;
     min-width: 60px;
     border-radius: 2px;
+    text-align: center;
+}
+.cart-main{
+    width: 71.8%;
+}
+/* styling the inventory cart basket */
+.cart-items-container{
+    width:28%;
+    float: left;
+    display: block;
+    background-color: #ffffff;
+    margin-left: 5px;
+    height: 100%;
+    top: 0;
+    right: 0px;
+    position: fixed;
+    z-index: 1;
+    box-shadow: -2px 4px 12px 0px #59533c, 0px 6px, 0px 0px #0aacad;
+
+
+}
+.btn-itn{
+    display: inline-block;
+    padding: 10px 5px;
+    border-radius: 30px;;
+    min-width: 100px;
+    box-sizing: border-box;
+    background-color: #0aacad
+}
+.cart-items-top-bar img,hr{
+    padding: 0 30px;
+}
+.cart-items-container{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cart-items-container hr{
+    border: 0;
+    border-bottom: 1px dashed orange;
+}
+.cart-items-payment{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 27%;
+    border-top: 1px solid #47a8de;
+    
+}
+.payment-conts{
+    width: 48%;
+    float: left;
+    text-align: center;
+
+}
+.divider{
+    height: 100px;
+    background-color: #e5a30e;
+    width: 1px;
+    float: left; 
+    margin: 6px 4px 4px 0;
+}
+.cart-inventory-items{
+    width: 90%;
+    margin: auto;
+}
+.crt-inv-item{
+    float: left;
+    width: 160px;
+    border-radius: 4px;
+    height: 200px;
+    margin:3px;
+    overflow: hidden;
+}
+.crt-inv-item .crt-inv-item-desc .item-title, h5{
+    text-align: center;
+font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.crt-inv-item-desc{
+    padding: 0 10px;
+}
+.crt-inv-item .crt-inv-item-img{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    float: left;
+}
+.crt-inv-item .crt-inv-item-img img{
+    width: 100%;
+    height: auto;
+}
+.pricing{
+    width: 100%;
+}
+.pricing .item-price{
+    float: left;
+    font-weight: bolder;
+    color: #000000;
+}
+.pricing .quantity{
+    float: right;
+    display: block;
+    border: 1px solid #e5a30e;
+    border-radius: 3px;
+    padding: 5px 8px;
 }

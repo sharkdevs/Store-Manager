@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
-<body>
+<body class="cart-body">
     <div class="row">
         <!-- A toggled Vertivle navbar to the left of the page. -->
         <div id="left-nav" class="left-nav-bar">
@@ -44,13 +44,7 @@
                 <div class="cart-inventory">
                     <!-- displays options to manipulate inventory items -->
                     <div class="cart-inventory-nav">
-                        <!-- 1. Search bar -->
-                        <div class="row row-search-bar">
-                            <form class="form-cart-search" action="#">
-                                <input type="text" placeholder="Search">
-                            </form>
-                        </div>
-                        <!-- 2. Categories Buttons -->
+                        <!-- 1. Search bar --><!-- 2. Categories Buttons -->
                         <ul class="">
                             <li class="">Foods</li>
                             <li class="">Cloths</li>
@@ -58,23 +52,213 @@
                             <li class="">shoes</li>
                             <li class="">Fashion</li>
                         </ul>
+                        <div class="row row-search-bar">
+                            <form class="form-cart-search" action="#">
+                                <input type="text" placeholder="Search">
+                            </form>
+                        </div>
+                        <!-- 2. Categories Buttons -->
+                        <!-- <ul class="">
+                            <li class="">Foods</li>
+                            <li class="">Cloths</li>
+                            <li class="">Electronics</li>
+                            <li class="">shoes</li>
+                            <li class="">Fashion</li>
+                        </ul> -->
                     </div>
     
                     <!-- list of all the items in the inventory for sale -->
                     <div class="cart-inventory-items">
-                        <div class="cart-inv-item">
-                            <div class="crt-inv-item-img"></div>
-                            <span class="crt-inv-item-name">
-                            </span>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/capuccino.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Cherry Beans cappuccino 3kg <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 600</span>
+                                    <span class="quantity">4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/1.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Men's Khaki Trousers<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 1000</span>
+                                    <span class="quantity">34</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/2.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Cherry Beans 3kg <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 400</span>
+                                    <span class="quantity">84</span>
+                                </div>
+                            </div>                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/3shirt.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Dark Blue African Tshirt<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 300</span>
+                                    <span class="quantity">45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/16tshirtred.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Maroon Commando Tshirt with Swag <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 1,200</span>
+                                    <span class="quantity">78</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/4infinix.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Infinix Noted Pen 10<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 13,000</span>
+                                    <span class="quantity">56</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/5 phone.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Rja House Phone<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 12,600</span>
+                                    <span class="quantity">87</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/7vacuum.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Vaccuum Cleaner Tiger Brand<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 65,000</span>
+                                    <span class="quantity">4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/8soaplemon.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Lemon Flavoured Home detergent<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 800</span>
+                                    <span class="quantity">87</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/9detergent.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">The other Home cleaner washing detergent <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 600</span>
+                                    <span class="quantity">7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/10BraitFrehner.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Brait Air freshner and cleaner <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 789</span>
+                                    <span class="quantity">45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/11Fridge.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Epson Fridge one Door and freezer <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 60,000</span>
+                                    <span class="quantity">8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/12printer.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Office Printer and Cartridge coloured <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 34,600</span>
+                                    <span class="quantity">37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/13LEDtv.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">LED V-stream spectrum Tv Home appliance<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 56,000</span>
+                                    <span class="quantity">34</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/14tv.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Blackdark Tv with Decoder <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 78,000</span>
+                                    <span class="quantity">3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/15tvsamsung.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Samsung wonder Home 56' display <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 60,090</span>
+                                    <span class="quantity">7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/17tabtouch.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Touch table Lenovo china<br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 6,000</span>
+                                    <span class="quantity">87</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/18tabt2.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Splendor Motorolla G4 super screen <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 76,500</span>
+                                    <span class="quantity">9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/4infinix.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Tecno LT Lightweight splendor <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 76,400</span>
+                                    <span class="quantity">34</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crt-inv-item">
+                            <div class="crt-inv-item-img"><img src="images/capuccino.jpg" alt="Product"></div>
+                            <div class="crt-inv-item-desc"><p class="item-title">Cherry Beans 3kg <br> </p>
+                                <div class="pricing">
+                                    <span class="item-price">Ksh 600</span>
+                                    <span class="quantity">34</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
     
             </div>
     
-            <!-- left part of the cart window that contains the items in the cart -->
+            <!-- right part of the cart window that contains the items in the cart -->
             <div class="cart-items-container">
-                <div class="cart-items-top-bar"></div>
+                <div class="cart-items-top-bar">
+                    <img src="images/Store manager.png" alt="Sales">
+                </div>
+                <hr>
     
                 <!-- List of cart items -->
                 <div class="cart-added-items">
@@ -83,7 +267,16 @@
     
                 <!-- payment details -->
                 <div class="cart-items-payment">
-    
+                    <div class="payment-conts">
+                        <h3 class="total">No. of Items</h3> <h1>4</h1>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="payment-conts">
+                        <h3 class="total">Total</h3> 
+                        <h1> Ksh 6000/=</h1>
+                    </div>
+                    <button class="btn btn-orange">Payment</button>
+
                 </div>
             </div>
         </div>
