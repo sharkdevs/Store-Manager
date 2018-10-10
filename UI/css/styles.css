@@ -1,6 +1,10 @@
 body{
     height: 100%;
     width: 100%;
+    
+
+}
+.login-body{
     background-color: #0aacad;
 
 }
@@ -90,7 +94,7 @@ input[type=email], input[type=password]{
 /* CART.HTML STYLES HERE */
 /* stylig left toggle navbar */
 .left-nav-bar{
-    width: 80px;
+    width: 0;
     position: fixed;
     top: 0;
     left: 0;
