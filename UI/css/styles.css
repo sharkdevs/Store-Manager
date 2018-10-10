@@ -341,6 +341,9 @@ padding-left: 40px;}
 .btn-warn{
     background-color: #ffc107 !important;
 }
+.text-warn{
+    color: #ffc107 !important;
+}
 .btn-red{
     background-color:  #dc3545 !important;
 }
