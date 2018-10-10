@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>View all Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    
+    <!-- font-awesme Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+
+</head>
+<body class="products-body">
+        <nav class="cart-top-nav">
+    
+                <!-- 1. toggle BurgerBurger floated to the left-->
+                <i class="fas fa-bars" onclick="openSideBar()"></i>
+                <!-- 2. Logged in user name and Image floated to the right -->
+                <span class="logged-in-user">
+                    <p class="user-name logged-user-item">Shark Ogeto</p>
+                    <div class="img-rounded logged-user-item">
+                        <img src="images/pos img.png" alt="user">
+                    </div>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                </span>
+                
+            </nav>
+    <!-- A toggled Vertivle navbar to the left of the page. -->
+    <div id="left-nav" class="left-nav-bar">
+            <a href="#" onclick="closeSideNav()">&times;</a>
+            <a href="#"><i class="fas fa-money-check-alt"></i>My sales</a>
+            <a href="#"><i class="fas fa-stream"></i>Products</a>
+            <a href="#"><i class="fas fa-table"></i>Categories</a>
+            <a href="#"><i class="fas fa-plus-circle"></i>Add Product</a>
+            <a href="#"><i class="fas fa-cogs"></i>settings</a>
+            
+
+    </div>
+    <div class="main" id="main">
+        <div class="title-section">
+            <h1><span class="orange">Products </span>In Store</h1>
+        </div>
+        <div class="sub-title"><h3>All products(20)</h3></div>
+
+        <div class="buttons">
+            <ul>
+                <li class=" btn btn-blue"><i class="fas fa-plus-circle"></i> Add Product</li>
+                <li class="btn "><i class="fas fa-edit"></i> Modify</li>
+                <li class="btn "><i class="fas fa-trash-alt"></i> Delete</li>
+            </ul>
+        </div>
+        <div class="tbl-products">
+            <table>
+                <thead>
+                    <td>#</td>
+                    <td>Product Name</td>
+                    <td>No. In stock</td>
+                    <td>Price</td>
+                    <td>view</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cherry Beans cappuccino 3kg </td>
+                        <td>4</td>
+                        <td>Ksh 400</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Men's Khaki Trousers </td>
+                        <td>34</td>
+                        <td>Ksh 1000</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td class="text-red"><i class="  fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cherry Beans shorts </td>
+                        <td>45</td>
+                        <td>Ksh 400</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dark Blue African Tshirt</td>
+                        <td>76</td>
+                        <td>Ksh 580</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Maroon Commando Tshirt with Swag</td>
+                        <td>7</td>
+                        <td>Ksh 650</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Infinix Noted Pen 10</td>
+                        <td>23</td>
+                        <td>Ksh 13,000</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Rja House Phone</td>
+                        <td>34</td>
+                        <td>Ksh 7890</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Vaccuum Cleaner Tiger Brand</td>
+                        <td>45</td>
+                        <td>Ksh 90,000</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Lemon Flavoured Home detergent</td>
+                        <td>12</td>
+                        <td>Ksh 560</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>The other Home cleaner washing detergent </td>
+                        <td>52</td>
+                        <td>Ksh 140</td>
+                        <td><i class="fas fa-eye"></i></td>
+                        <td><i class="fas fa-edit"></i></td>
+                        <td><i class=" text-red fas fa-trash-alt"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

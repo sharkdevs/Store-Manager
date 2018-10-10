@@ -8,8 +8,9 @@ margin: 0px !important;
     width: 100%;
     padding: 5px 0;
 }
-.cart-body{
+.cart-body,.products-body{
     /* background-color: #f8f9fa; */
+    
     font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     background-image: linear-gradient(#eff 1%,#eff 1%, #fff 100%);
@@ -320,4 +321,48 @@ font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 .in-the-cart .price{
     color: #e5a30e;
     float: left
+}
+
+
+/* STYLING PRODUCTS.HTML */
+.title-section h1{
+padding-left: 40px;}
+.sub-title{
+    padding-left: 40px;
+}
+.main .buttons li{
+    display: inline-block;
+    list-style: none;
+}
+.btn-blue{
+    background-color: #0aacad;
+    color: white;
+}
+.btn-warn{
+    background-color: #ffc107 !important;
+}
+.btn-red{
+    background-color:  #dc3545 !important;
+}
+.text-red{
+    color: #dc3545 !important;
+
+}
+.tbl-products{
+    margin: 0 40px;
+}
+.tbl-products table {
+    width: 80%;
+}
+table tr:nth-child(even){
+    background-color: #f6f6f6;
+}
+table tr{
+    padding: 10px 0;
+    height: 30px;
+}
+table thead{
+    background: #0aacad;
+    color: white;
+    font-weight: bolder;
 }
