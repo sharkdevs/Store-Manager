@@ -307,3 +307,17 @@ font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 3px;
     padding: 5px 8px;
 }
+.in-the-cart{
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid #f0f3f3;
+}
+.in-the-cart .name{
+    font-weight: bolder;
+    width: 80%;
+    float: left;
+}
+.in-the-cart .price{
+    color: #e5a30e;
+    float: left
+}
