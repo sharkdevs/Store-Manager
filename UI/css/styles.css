@@ -338,6 +338,9 @@ padding-left: 40px;}
     background-color: #0aacad;
     color: white;
 }
+.text-green{
+    color: #28a745 !important
+}
 .btn-warn{
     background-color: #ffc107 !important;
 }
