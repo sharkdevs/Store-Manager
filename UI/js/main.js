@@ -33,6 +33,11 @@ function searchInventory(){
     }
 }
 
+// successful payment alert.
+function alertPayment(){
+    alert("Thanks for allowing us to serve you. Bye");
+}
+
 // this function gets the specific item clicked and inserts it in the cart
 function getClickedItem($this){
     var itemName=$this.querySelector(".item-title").innerText;
