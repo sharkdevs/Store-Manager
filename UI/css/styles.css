@@ -4,13 +4,17 @@ body{
     
 
 }
+.row{
+    width: 100%;
+    padding: 5px 0;
+}
 
 .login-body{
     background-color: #0aacad;
 
 }
 .container{
-    width: 100%;
+    width: 96%;
     margin: 50px auto;
     padding-left: 50px;
 }
@@ -167,4 +171,23 @@ input[type=email], input[type=password]{
 }
 .logged-in-user .img-rounded img{
     width: 100%;
+}
+.form-cart-search{
+    width: 80%;
+    margin: auto;
+}
+.form-cart-search input[type=text]{
+    border: 1px solid #807b7be3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    width: 100%;
+}
+.cart-inventory-nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 3px 5px;
+    background-color: gray;
+    min-width: 60px;
+    border-radius: 2px;
 }
