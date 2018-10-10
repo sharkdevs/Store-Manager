@@ -4,6 +4,7 @@ body{
     
 
 }
+
 .login-body{
     background-color: #0aacad;
 
@@ -126,4 +127,44 @@ input[type=email], input[type=password]{
     text-align: center;
     font-size: 20px;
     padding: 8px 0;
+}
+
+/* styling the top navbar of the inventory section */
+
+.cart-top-nav{
+    height: 60px;
+    background-color: #0aacad
+}
+.cart-top-nav i{
+    vertical-align: middle;
+    padding: 20px 30px;
+}
+ .logged-in-user{
+    width: auto;
+    float: right;
+    padding-right: 30px;
+
+
+} 
+.logged-in-user p{
+    font-family:  'Helvetica Neue', sans-serif;
+}
+.logged-user-item{
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.img-rounded{
+    border-radius: 50%;
+    background-color: grey;
+}
+.logged-in-user .img-rounded{
+    
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+}
+.logged-in-user .img-rounded img{
+    width: 100%;
 }
