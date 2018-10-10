@@ -12,6 +12,7 @@ margin: 0px !important;
     /* background-color: #f8f9fa; */
     font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
+    background-image: linear-gradient(#eff 1%,#eff 1%, #fff 100%);
 }
 
 .login-body{
