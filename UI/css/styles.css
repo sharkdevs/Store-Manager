@@ -86,3 +86,40 @@ input[type=email], input[type=password]{
     font-size: 30px;
     margin: 20px 20px 20px 0px;
 }
+
+/* CART.HTML STYLES HERE */
+/* stylig left toggle navbar */
+.left-nav-bar{
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    transition: 0.5s;
+    height: 100%;
+    padding-top: 60px;
+}
+.left-nav-bar a{
+    list-style: none;
+    padding: 8px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid;
+    color:#59533c;
+}
+.left-nav-bar a:hover{
+    color: #ffa500;
+    
+}
+.left-nav-bar a i{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 8px 0;
+}
