@@ -270,6 +270,10 @@ input[type=email], input[type=password]{
     margin:3px;
     overflow: hidden;
 }
+.crt-inv-item:hover{
+    background-color: #0aacad;
+    border: 1px solid #0aacad;
+}
 .crt-inv-item .crt-inv-item-desc .item-title, h5{
     text-align: center;
 font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
