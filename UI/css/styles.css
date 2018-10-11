@@ -372,3 +372,67 @@ table thead{
     color: white;
     font-weight: bolder;
 }
+
+/* STYLE THE VIEW PRODUCT DETAIL FEATURE */
+.hidden-detail-cont{
+    top: 80px;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    height: 70%;
+    width: 0;
+    box-shadow: -2px 4px 12px 0px #59533c, 0px 6px, 0px 0px #0aacad;
+
+}
+.hidden-detail-cont .close a{
+    text-decoration: none;
+    
+}
+.hidden-detail-cont .close{
+    padding: 10px;
+   
+    font-size: 20px;
+}
+.hidden-detail-cont .detail-image{
+    height: 250px;
+    overflow: hidden;
+    /* background-color: red; */
+    float: left;
+    width: 100%;
+     
+}
+.hidden-detail-cont .detail-image img{
+
+    display: block;    
+    margin: auto;
+    height: 100%; 
+}
+.padding-lr-40{
+    padding: 0 40px;
+}
+.detail-quantities{
+    widows: 100%;
+}
+.detail-in-store{
+    float: left;
+}
+.detail-price{
+    float: right;
+}
+/* .detail-in-store , .detail-price{
+    display: inline-block;
+} */
+.detail-buttons{
+    width: 100%;
+    float: left;
+    background-color: #f0f3f3;
+    padding: 40px ;
+    
+}
+.detail-desc{
+    float: left;
+    width: 100%;
+    margin-right: 60px;
+
+}
