@@ -88,3 +88,7 @@ function filterByAttendant(){
         }
     }
 }
+
+function confirmDelete(){
+    alert("Are You sure you want to delete the product?")
+}
