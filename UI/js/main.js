@@ -57,3 +57,11 @@ function getClickedItem($this){
 function getItemsInCart(){
     return document.getElementsByClassName("in-the-cart");
 }
+
+// finction to open product description view
+function showProductPane(){
+    document.getElementById("product-pane").style.width="400px";
+}
+function closeProductPane(){
+    document.getElementById("product-pane").style.width="0px";
+}
