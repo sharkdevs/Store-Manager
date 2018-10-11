@@ -439,3 +439,11 @@ table thead{
 .tbl-products .fa-eye, .fa-trash-alt, .fa-edit{
     cursor: pointer;
 }
+
+
+/* STYLING MYSALES.HTML PAGE */
+input[type=date]{
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 4px;
+}
