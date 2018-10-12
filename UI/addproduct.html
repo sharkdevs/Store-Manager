@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add new product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    
+    <!-- font-awesme Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+
+</head>
+<body class="products-body">
+        <nav class="cart-top-nav">
+    
+                <!-- 1. toggle BurgerBurger floated to the left-->
+                <i class="fas fa-bars" onclick="openSideBar()"></i>
+                <!-- 2. Logged in user name and Image floated to the right -->
+                <span class="logged-in-user">
+                    <p class="user-name logged-user-item">Shark Ogeto</p>
+                    <div class="img-rounded logged-user-item">
+                        <img src="images/pos img.png" alt="user">
+                    </div>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                </span>
+                
+            </nav>
+    <!-- A toggled Vertivle navbar to the left of the page. -->
+    <div id="left-nav" class="left-nav-bar">
+            <a href="#" onclick="closeSideNav()">&times;</a>
+            <a href="mysales.html"><i class="fas fa-money-check-alt"></i>My sales</a>
+            <a href="products.html"><i class="fas fa-stream"></i>Products</a>
+            <a href="#"><i class="fas fa-table"></i>Categories</a>
+            <a href="addproduct.html"><i class="fas fa-plus-circle"></i>Add Product</a>
+            <a href="#"><i class="fas fa-cogs"></i>settings</a>
+            
+
+    </div>
+
+    
+
+
+    <div class="main" id="main">
+        <div class="title-section">
+            <h1><span class="orange">Add New </span>Product<small>(Administrator)</small></h1>
+        </div>
+        <div class="sub-title"><h3>Create a product below</h3></div>
+
+        <div class="create-product padding-lr-40">
+            <form action="#" method="post">
+                <label for="pname">Product name</label>
+                <input type="text" name="pname " id="pname">
+
+                <div class="frm-half">
+                        <label for="Number">Number of Items</label>
+                        <input type="text" name="Number" id="Number">
+                </div>
+
+                <div class="frm-half">
+                        <label for="price">Price</label>
+                        <input type="text" name="price" id="price">
+                </div>
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image">
+                <br>
+                 
+                <label for="description">Add product description</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                <input class="btn btn-blue" type="submit" value="Add Product">
+            </form>
+        </div>
+
+      
+    </div>
+</body>
+</html>
