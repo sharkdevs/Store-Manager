@@ -466,4 +466,13 @@ input[type=date]{
 .btn a, .text-warn a{
     text-decoration: none;
     color: inherit;
+
+}
+
+.col-6{
+    width: 50%;
+    float: left;
+}
+.col-6 table{
+    width: 100%;
 }
