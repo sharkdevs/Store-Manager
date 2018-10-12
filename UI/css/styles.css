@@ -8,7 +8,7 @@ margin: 0px !important;
     width: 100%;
     padding: 5px 0;
 }
-.cart-body,.products-body{
+.cart-body,.products-body,.mysales-body{
     /* background-color: #f8f9fa; */
     
     font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -438,4 +438,13 @@ table thead{
 }
 .tbl-products .fa-eye, .fa-trash-alt, .fa-edit{
     cursor: pointer;
+}
+
+
+/* STYLING MYSALES.HTML PAGE */
+input[type=date]{
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 4px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif
 }
