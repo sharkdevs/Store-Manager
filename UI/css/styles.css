@@ -462,3 +462,8 @@ input[type=date]{
     float: left;
     margin-bottom: 30px
 }
+
+.btn a, .text-warn a{
+    text-decoration: none;
+    color: inherit;
+}
