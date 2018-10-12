@@ -479,6 +479,7 @@ input[type=date]{
 
 /* STYLE THE DASHBOARD */
 .dash-tabs{
+    margin-top: 100px;
     width: 100%;
     height: 400px;
 }
@@ -488,6 +489,7 @@ input[type=date]{
     width: 80%;
 }
 .dash-tabs ul li{
+    text-align: center;
     display: inline-block;
     list-style: none;
     color: white;
@@ -507,4 +509,13 @@ input[type=date]{
     text-decoration: none;
     color: inherit;
     text-align: center;
+}
+.dash-tabs .title-section{
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.dash-tabs ul li:nth-child(1n){
+    margin-left: 70px;
 }
