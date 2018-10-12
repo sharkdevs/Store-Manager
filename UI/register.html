@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add new User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    
+    <!-- font-awesme Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+
+</head>
+<body class="products-body">
+        <nav class="cart-top-nav">
+    
+                <!-- 1. toggle BurgerBurger floated to the left-->
+                <i class="fas fa-bars" onclick="openSideBar()"></i>
+                <!-- 2. Logged in user name and Image floated to the right -->
+                <span class="logged-in-user">
+                    <p class="user-name logged-user-item">Shark Ogeto</p>
+                    <div class="img-rounded logged-user-item">
+                        <img src="images/pos img.png" alt="user">
+                    </div>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                </span>
+                
+            </nav>
+    <!-- A toggled Vertivle navbar to the left of the page. -->
+    <div id="left-nav" class="left-nav-bar">
+            <a href="#" onclick="closeSideNav()">&times;</a>
+            <a href="mysales.html"><i class="fas fa-money-check-alt"></i>My sales</a>
+            <a href="products.html"><i class="fas fa-stream"></i>Products</a>
+            <a href="addproduct.html"><i class="fas fa-plus-circle"></i>Add Product</a>
+            <a href="#"><i class="fas fa-table"></i>Categories</a>
+            <a href="#"><i class="fas fa-cogs"></i>settings</a>
+            
+
+    </div>
+
+    
+
+
+    <div class="main" id="main">
+        <div class="title-section">
+            <h1><span class="orange">Add New </span>User<small>(Administrator)</small></h1>
+        </div>
+        <div class="sub-title"><h3>User details</h3></div>
+
+        <div class="container">
+                <div class="col-3 ">
+                        <!-- create a login form -->
+                        <form class="col-form" action="cart.html" method="post">
+                                <!-- <h3>User login</h3> -->
+        
+                            <img src="images/Store manager login.png" alt="">
+                            <hr>
+                            <div class="form-items">
+                                    <label for="firstname">Firstname</label>
+                                    <input type="text" name="firstname" id="firstname">
+                            </div>
+                            <div class="form-items">
+                                    <label for="lastname">Lastname</label>
+                                    <input type="text" name="lastname" id="lastname">
+                            </div>
+                            <div class="form-items">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                            </div>
+        
+                            <div class="form-items">
+                                <label for="email">Password</label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <a href=""><button class="btn btn-orange" type="submit"> Create User</button></a>         
+                          
+                            <hr>
+                            <div>&copy; 2018. Store Management</div>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                            <table>
+                                    <thead>
+                                        <td>#</td>
+                                        <td>First Name</td>
+                                        <td>Last Name</td>
+                                        <td>Email</td>
+                                        
+                                       
+                                    </thead>
+                                    <tbody>
+                                        <tr class="tbl-product-row">
+                                            <td>1</td>
+                                            <td>Meshack</td>
+                                            <td>Ogeto</td>
+                                            <td>mesharkz1@gmail.com</td>
+                                            
+                                        </tr>
+                                        <tr class="tbl-product-row">
+                                            <td>2</td>
+                                            <td>Valeria</td>
+                                            <td> Mank</td>
+                                            <td>Valeria@gmail.com</td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                                    
+                    </div>
+        </div>
+     
+    </div>
+</body>
+</html>
