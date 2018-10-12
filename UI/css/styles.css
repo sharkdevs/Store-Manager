@@ -73,7 +73,7 @@ margin: 0px !important;
     border: 0;
     border-bottom: 1px dashed orangered;
 }
-input[type=email], input[type=password]{
+textarea,input[type=email],input[type=text], input[type=password]{
    width: 100%;
    border-radius: 4px;
    border: 1px solid #ffddff;
@@ -447,4 +447,18 @@ input[type=date]{
     padding: 4px;
     border-radius: 4px;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* STYLING ADD PRODUCT */
+.create-product{
+    width: 100%
+}
+.create-product form{
+    margin-right:  300px;
+}
+.frm-half{
+    width: 48%;
+    margin-right: 10px;
+    float: left;
+
 }
