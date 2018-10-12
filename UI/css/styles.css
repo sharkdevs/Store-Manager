@@ -1,0 +1,88 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #0aacad;
+
+}
+.container{
+    width: 100%;
+    margin: 50px auto;
+    padding-left: 50px;
+}
+.col-3{
+    width:380px;
+    margin: auto;
+    float: left;
+    margin: 0 20px;
+}
+.img-holder img{
+    width: 100%;
+}
+.orange{
+    color: #ffa500;
+}
+.login-main h1{
+    color: antiquewhite;
+    font-family:'Segeo Ui','Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+.login-main{
+    color: aliceblue;
+    font-family: Ubuntu, 'Open Sans', sans-serif;
+    
+}
+.login-center{
+    padding-left: 30px;
+    padding-top: 60px;
+}
+
+/* styling for the right column containing login form */
+.col-form{
+    background-color:#f0f3f3;
+    height: 380px;
+    /* border-radius: 5px; */
+    width: 78%;
+    box-shadow: 2px 2px 3px 6px #eeeeee;
+    padding: 20px;
+    z-index: 1000;
+    color: orange
+    
+}
+.col-form h3{
+    color: black;
+    text-transform: uppercase;
+    text-align: center
+}
+.col-form hr{
+    border: 0;
+    border-bottom: 1px dashed orangered;
+}
+input[type=email], input[type=password]{
+   width: 100%;
+   border-radius: 4px;
+   border: 1px solid #ffddff;
+   padding: 8px 20px;
+   box-sizing: border-box;
+}
+.btn{
+    border-radius: 4px;
+    padding: 7px 20px;
+    border: 1px solid;
+  
+    
+}
+.btn-orange{
+    color: white;
+    background-color: #e5a30e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+.login-center li{
+    list-style: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 20px 20px 20px 0px;
+}
