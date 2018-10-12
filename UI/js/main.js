@@ -66,3 +66,25 @@ function showProductPane(){
 function closeProductPane(){
     document.getElementById("product-pane").style.width="0px";
 }
+
+// function to to filter by attendant
+function filterByAttendant(){
+    // get the value of the filter box
+    var filter=document.getElementById("filter-attendant").value.toLowerCase();
+
+    // identify the element containers t be displayed if search text is found
+    var products=document.getElementsByClassName("tbl-product-row");
+
+    // iterate through the array of products searching for the keywords
+
+    for(i=0;i<products.length;i++){
+        if(products[i].innerText.toLowerCase().includes(filter)){
+            // show the ones that contain keywords.
+            products[i].style.display="block";
+        }
+        else{
+            // hide those that dont contain the keywords
+            products[i].style.display="none";
+        }
+    }
+}
