@@ -30,9 +30,8 @@
     <!-- A toggled Vertivle navbar to the left of the page. -->
     <div id="left-nav" class="left-nav-bar">
             <a href="#" onclick="closeSideNav()">&times;</a>
-            <a href="adminsales.html"><i class="fas fa-money-check-alt"></i>My sales</a>
-            <a href="products.html"><i class="fas fa-stream"></i>Products</a>
-            <a href="addproduct.html"><i class="fas fa-plus-circle"></i>Add Product</a>
+            <a href="mysales.html"><i class="fas fa-money-check-alt"></i>My sales</a>
+            <a href="userproducts.html"><i class="fas fa-stream"></i>Products</a>
             <a href="#"><i class="fas fa-table"></i>Categories</a>
             <a href="#"><i class="fas fa-cogs"></i>settings</a>
             
@@ -53,24 +52,18 @@
             <p>Made In Taiwan, the Sper curved 72' display comes with epic luxury and quality. It has a seven months warranty and an Insurance</p>
         </div>
         <div class="padding-lr-40 detail-buttons"><button class="btn btn-blue"><a href="cart.html">Sale Product</a></button>
-        <button class="btn">
-            <a href="editproduct.html">
-                <i class=" text-green fas fa-edit"></i> Edit product
-            </a>
-        </button>
-        <button onclick="confirmDelete()" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i> Delete</button></div>
+        </div>
     </div>
 
 
     <div class="main" id="main">
         <div class="title-section">
-            <h1><span class="orange">Products </span>In Store <small>(Administrator)</small></h1>
+            <h1><span class="orange">Products </span>In Store <small>(Attendant)</small></h1>
         </div>
         <div class="sub-title"><h3>All products(20)</h3></div>
 
         <div class="buttons">
             <ul>
-                <li class=" btn btn-blue"><a href="addproduct.html"><i class="fas fa-plus-circle"></i> Add Product</a> </li>
                 <li class="btn "><i class="fas fa-print"></i> Print Products</li>
                 <li class="btn "><i class="fas fa-file-export"></i> Export Data</li>
             </ul>
@@ -83,8 +76,7 @@
                     <td>No. In stock</td>
                     <td>Price</td>
                     <td>view</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    
 
                 </thead>
                 <tbody>
@@ -94,8 +86,8 @@
                         <td>4</td>
                         <td>Ksh 400</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>2</td>
@@ -103,8 +95,8 @@
                         <td>34</td>
                         <td>Ksh 1000</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-red"><i class="  fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        </i></td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -112,8 +104,8 @@
                         <td>45</td>
                         <td>Ksh 400</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>4</td>
@@ -121,8 +113,8 @@
                         <td>76</td>
                         <td>Ksh 580</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>5</td>
@@ -130,8 +122,8 @@
                         <td>7</td>
                         <td>Ksh 650</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>6</td>
@@ -139,8 +131,8 @@
                         <td>23</td>
                         <td>Ksh 13,000</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>7</td>
@@ -148,8 +140,8 @@
                         <td>34</td>
                         <td>Ksh 7890</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>8</td>
@@ -157,8 +149,8 @@
                         <td>45</td>
                         <td>Ksh 90,000</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>9</td>
@@ -166,8 +158,8 @@
                         <td>12</td>
                         <td>Ksh 560</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td>10</td>
@@ -175,8 +167,8 @@
                         <td>52</td>
                         <td>Ksh 140</td>
                         <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                        <td class="text-warn"><a href="editproduct.html"><i class="fas fa-edit"></i></a></td>
-                        <td><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i></td>
+                        
+                        
                     </tr>
                 </tbody>
             </table>
