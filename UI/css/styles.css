@@ -86,8 +86,7 @@ textarea,input[type=email],input[type=text], input[type=password]{
     border: 1px solid;
     float: left;
     cursor: pointer;
-  
-    
+    box-sizing: border-box   ; 
 }
 .btn-orange{
     color: white;
