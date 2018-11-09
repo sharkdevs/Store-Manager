@@ -1,3 +1,4 @@
+
 // js function to open the side navbar
 
 function openSideBar(){
