@@ -11,6 +11,9 @@
 
     <!-- font-awesme Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- add login js -->
+    <script src="js/login.js"></script>
 </head>
 <body class="login-body">
     <!-- set the body Header -->
@@ -42,11 +45,12 @@
             </div>
             <div class="col-3 ">
                 <!-- create a login form -->
-                <form class="col-form" action="cart.html" >
+                <form class="col-form" id="login">
                         <!-- <h3>User login</h3> -->
 
                     <img src="images/Store manager login.png" alt="">
                     <hr>
+                    <span id="message"></span>
                     <div class="form-items">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email">
@@ -57,10 +61,8 @@
                         <input type="password" name="password" id="password">
                     </div>
                     
-                    <a href="cart.html">
-                            <button  class="btn btn-orange" type="submit">Attendant Login</button> 
+                            <span  class="row btn btn-orange"  type="submit" onclick="processLogin()">Attendant Login</span> 
 
-                    </a>
                  
                     <input type="checkbox" checked='true' name="remember" id="remember"> Remember Me?
 
@@ -68,8 +70,7 @@
                     <hr>
                     <div>&copy; 2018. Store Management</div>
                 </form>
-                <form action="dashboard.html"><a href="dashboard.html"><button class="btn btn-orange" type="submit">Admin Login</button></a> 
-                </form>
+                
             </div>
         </div>
     </div>
