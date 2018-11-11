@@ -10,6 +10,7 @@
     <!-- font-awesme Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="js/main.js"></script>
+    <script src="js/registration.js"></script>
 
 </head>
 <body class="products-body">
@@ -19,7 +20,7 @@
                 <i class="fas fa-bars" onclick="openSideBar()"></i>
                 <!-- 2. Logged in user name and Image floated to the right -->
                 <span class="logged-in-user">
-                    <p class="user-name logged-user-item">Administrator</p>
+                    <p id="user-name" class="user-name logged-user-item">Administrator</p>
                     <div class="img-rounded logged-user-item">
                         <img src="images/pos img.png" alt="user">
                     </div>
@@ -56,6 +57,7 @@
         
                             <img src="images/Store manager login.png" alt="">
                             <hr>
+                            <span id="message"></span>
                             <div class="form-items">
                                     <label for="firstname">Firstname</label>
                                     <input type="text" name="firstname" id="firstname">
@@ -73,7 +75,7 @@
                                 <label for="email">Password</label>
                                 <input type="password" name="password" id="password">
                             </div>
-                            <a href=""><button class="btn btn-orange" type="submit"> Create User</button></a>         
+                            <span class="btn btn-orange" onclick="registerUser()"> Create User</span>         
                           
                             <hr>
                             <div>&copy; 2018. Store Management</div>

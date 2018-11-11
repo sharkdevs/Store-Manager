@@ -1,3 +1,9 @@
+window.onload = function () {
+    if(sessionStorage.current_user){
+        document.getElementById('user-name').innerHTML = JSON.parse(sessionStorage.current_user).email;
+
+    }
+}
 // js function to open the side navbar
 
 function openSideBar(){
