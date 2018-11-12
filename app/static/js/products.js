@@ -72,6 +72,7 @@ function addTableData(tr,td,data){
         console.log(dt);
         appendNode(tr,td);
     });
+
     return tr
 }
 
@@ -112,6 +113,36 @@ function getProducts() {
             ];
             tr = addTableData(tr,td,t_data);
             console.log(tr);
+
+            // add the view edit and delete buttons
+            if (JSON.parse(sessionStorage.current_user).role == "attendant"){
+                td = createNode('td')
+                td.innerHTML=`  <i onclick="showProductPane()" class="fas fa-eye"></i>`;
+                td.className="text-green";
+                appendNode(tr,td);
+
+            }
+            if (JSON.parse(sessionStorage.current_user).role == "admin"){
+                td = createNode('td')
+                td.innerHTML=`  <i onclick="showProductPane()" class="fas fa-eye"></i>`;
+                td.className="text-green";
+                appendNode(tr,td);
+
+                // add an edit button
+                td = createNode('td')
+                td.innerHTML=`  <i class="fas fa-edit"></i>`;
+                td.className="text-warn";
+                appendNode(tr,td);
+
+                // add delete button
+                td = createNode('td')
+                td.innerHTML=`  <i class="fas fa-trash"></i>`;
+                td.className="text-red";
+                appendNode(tr,td);
+
+
+            }
+
             appendNode(products_table,tr);
             rowNum +=1
         });
