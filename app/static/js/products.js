@@ -5,6 +5,9 @@ var header = new Headers({
 
 });
 
+// a disctionary to store queried products locally
+let  product_item = {} ;
+
 
 function createProduct() {
     var init = {
@@ -101,6 +104,17 @@ function getProducts() {
         rowNum = 1; //the row id
         data['products in stock'].forEach(product => {
             console.log(product['product_name']);
+
+            // save the queried data in a list for ease of retrieving
+
+            product_item[product['product_id']] = {
+                "product_image":product['product_image'],
+                "product_name":product['product_name'],
+                "description":product['description'],
+                "product_price":product['product_price'],
+                "quantity":product['quantity']
+            };
+            console.log(product_item)
             products_table = document.getElementById('tbl-products')
             let tr = createNode('tr'),
                 td = createNode('td');
@@ -117,7 +131,7 @@ function getProducts() {
             // add the view edit and delete buttons
             if (JSON.parse(sessionStorage.current_user).role == "attendant"){
                 td = createNode('td')
-                td.innerHTML=`  <i onclick="showProductPane()" class="fas fa-eye"></i>`;
+                td.innerHTML=`  <i id="${product['product_id']}" onclick="showProductPane(this)" class="fas fa-eye"></i>`;
                 td.className="text-green";
                 appendNode(tr,td);
 
