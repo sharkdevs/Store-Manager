@@ -437,7 +437,7 @@ table thead{
     margin-right: 60px;
 
 }
-.tbl-products .fa-eye, .fa-trash-alt, .fa-edit{
+.tbl-products .fa-eye, .fa-trash-alt,.fa-trash, .fa-edit{
     cursor: pointer;
 }
 
