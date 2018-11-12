@@ -10,6 +10,7 @@
     <!-- font-awesme Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="../static/js/main.js"></script>
+    <script src="../static/js/products.js"></script>
 
 </head>
 <body class="products-body">
@@ -48,27 +49,28 @@
         </div>
         <div class="sub-title"><h3>Create a product below</h3></div>
 
+        <span id="message"></span>
         <div class="create-product padding-lr-40">
-            <form action="#" method="post">
-                <label for="pname">Product name</label>
-                <input type="text" name="pname " id="pname">
+            <form  id="productForm" name="productForm">
+                <label for="product_name">Product name</label>
+                <input type="text" name="product_name " id="product_name">
 
                 <div class="frm-half">
-                        <label for="Number">Number of Items</label>
-                        <input type="text" name="Number" id="Number">
+                        <label for="quantity">Number of Items</label>
+                        <input type="text" name="quantity" id="quantity">
                 </div>
 
                 <div class="frm-half">
-                        <label for="price">Price</label>
-                        <input type="text" name="price" id="price">
+                        <label for="product_price">Price</label>
+                        <input type="text" name="product_price" id="product_price">
                 </div>
-                <label for="image">Upload Image</label>
-                <input type="file" name="image" id="image">
+                <label for="product_image">Insert Image URL</label>
+                <input type="url" name="product_image" id="product_image">
                 <br>
                  
                 <label for="description">Add product description</label>
                 <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                <input class="btn btn-blue" type="submit" value="Add Product">
+                <span class="btn btn-blue"  onclick="createProduct()">Add Product</span>
             </form>
         </div>
 
