@@ -64,14 +64,7 @@ function getItemsInCart(){
     return document.getElementsByClassName("in-the-cart");
 }
 
-// function to open product description view
-function showProductPane(){
-    document.getElementById("product-pane").style.width="400px";
-}
-// function to close the pane
-function closeProductPane(){
-    document.getElementById("product-pane").style.width="0px";
-}
+
 
 // function to to filter by attendant
 function filterByAttendant(){

@@ -114,7 +114,6 @@ function getProducts() {
                 "product_price":product['product_price'],
                 "quantity":product['quantity']
             };
-            console.log(product_item)
             products_table = document.getElementById('tbl-products')
             let tr = createNode('tr'),
                 td = createNode('td');
@@ -131,14 +130,14 @@ function getProducts() {
             // add the view edit and delete buttons
             if (JSON.parse(sessionStorage.current_user).role == "attendant"){
                 td = createNode('td')
-                td.innerHTML=`  <i id="${product['product_id']}" onclick="showProductPane(this)" class="fas fa-eye"></i>`;
+                td.innerHTML=`  <i id="${product['product_id']}" onclick="showProductPane(this)" class="fas fa-eye"> </i>`;
                 td.className="text-green";
                 appendNode(tr,td);
 
             }
             if (JSON.parse(sessionStorage.current_user).role == "admin"){
                 td = createNode('td')
-                td.innerHTML=`  <i onclick="showProductPane()" class="fas fa-eye"></i>`;
+                td.innerHTML=`  <i id="${product['product_id']}" onclick="showProductPane(this)" class="fas fa-eye"></i>`;
                 td.className="text-green";
                 appendNode(tr,td);
 
@@ -162,4 +161,43 @@ function getProducts() {
         });
 
     })
+}
+
+// function to open product description view
+function showProductPane($this){
+    id = $this.id
+    image = product_item[id].product_image;
+    desc = product_item[id].description;
+    price = product_item[id].product_price;
+    quantity = product_item[id].quantity;
+    pname = product_item[id].product_name;
+    
+    side_product = `
+        <span class="close"><a onclick="closeProductPane()" href="#">&times;</a></span>
+        <div class="detail-image"><img src="${image}" alt="product"></div>
+        <div class="padding-lr-40 detail-name"><h3>${pname}</h3></div>
+        
+        <div class="padding-lr-40 detail-quantities">
+            <h3 class="detail-in-store">In stock: ${quantity}</h3>
+            <h3 class="detail-price orange">Ksh ${price}</h3>
+        </div>
+        <div class="detail-desc padding-lr-40">
+            <p>${desc}</p>
+        </div>
+        <div class="padding-lr-40 detail-buttons"><button class="btn btn-blue"><a href="cart.html">Sale Product</a></button>
+        <button class="btn">
+            <a href="editproduct.html">
+                <i class=" text-green fas fa-edit"></i> Edit product
+            </a>
+        </button>
+        <button onclick="confirmDelete()" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i> Delete</button></div>
+    `;
+    document.getElementById("product-pane").innerHTML = side_product;
+    document.getElementById("product-pane").style.width="400px";
+
+
+}
+// function to close the pane
+function closeProductPane(){
+    document.getElementById("product-pane").style.width="0px";
 }
