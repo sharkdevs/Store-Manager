@@ -201,3 +201,25 @@ function showProductPane($this){
 function closeProductPane(){
     document.getElementById("product-pane").style.width="0px";
 }
+
+
+// EDIT A PRODUCT
+function editProduct(id){
+    url = products_url+id;
+    var init = {
+        method : 'GET',
+        headers : header
+    };
+
+    req = new Request(url,init);
+
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        
+    })
+}
