@@ -143,7 +143,7 @@ function getProducts() {
 
                 // add an edit button
                 td = createNode('td')
-                td.innerHTML=`  <i class="fas fa-edit"></i>`;
+                td.innerHTML=`  <i class="fas fa-edit" onclick="editProduct(${product['product_id']})"></i>`;
                 td.className="text-warn";
                 appendNode(tr,td);
 
@@ -186,7 +186,7 @@ function showProductPane($this){
         </div>
         <div class="padding-lr-40 detail-buttons"><button class="btn btn-blue"><a href="cart.html">Sale Product</a></button>
         <button class="btn">
-            <a href="editproduct.html">
+            <a href="#"  onclick="editProduct(${id})">
                 <i class=" text-green fas fa-edit"></i> Edit product
             </a>
         </button>
@@ -205,21 +205,42 @@ function closeProductPane(){
 
 // EDIT A PRODUCT
 function editProduct(id){
-    url = products_url+id;
+    url = products_url+"/"+id;
     var init = {
         method : 'GET',
         headers : header
     };
 
     req = new Request(url,init);
-
+    status = ""
     fetch(req)
     .then((res)=>{
         console.log(res);
+        status = res.status;
         return res.json();
     })
     .then((data)=>{
         console.log(data);
+        if (status==200){
+            sessionStorage.queried_product = JSON.stringify(data.product);
+
+            console.log(sessionStorage.queried_product);
+
+            // route to the edit page
+            window.location.href = "editproduct.html";
+        }
+        else{
+            alert("There was a problem getting the product to edit. Try again Later");
+        }
         
     })
+    .catch((Error)=>{
+        console.log(Error);
+    });
+}
+
+function populateFields() {
+    field_data = JSON.parse(sessionStorage.queried_product);
+    console.log(field_data);
+    
 }
