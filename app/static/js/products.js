@@ -143,13 +143,13 @@ function getProducts() {
 
                 // add an edit button
                 td = createNode('td')
-                td.innerHTML=`  <i class="fas fa-edit"></i>`;
+                td.innerHTML=`  <i class="fas fa-edit" onclick="editProduct(${product['product_id']})"></i>`;
                 td.className="text-warn";
                 appendNode(tr,td);
 
                 // add delete button
                 td = createNode('td')
-                td.innerHTML=`  <i class="fas fa-trash"></i>`;
+                td.innerHTML=`  <i class="fas fa-trash" onclick="deleteProduct(${product['product_id']})"></i>`;
                 td.className="text-red";
                 appendNode(tr,td);
 
@@ -186,11 +186,11 @@ function showProductPane($this){
         </div>
         <div class="padding-lr-40 detail-buttons"><button class="btn btn-blue"><a href="cart.html">Sale Product</a></button>
         <button class="btn">
-            <a href="editproduct.html">
+            <a href="#"  onclick="editProduct(${id})">
                 <i class=" text-green fas fa-edit"></i> Edit product
             </a>
         </button>
-        <button onclick="confirmDelete()" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i> Delete</button></div>
+        <button onclick="deleteProduct(${id})" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="deleteProduct(${id})"></i> Delete</button></div>
     `;
     document.getElementById("product-pane").innerHTML = side_product;
     document.getElementById("product-pane").style.width="400px";
@@ -200,4 +200,171 @@ function showProductPane($this){
 // function to close the pane
 function closeProductPane(){
     document.getElementById("product-pane").style.width="0px";
+}
+
+
+// EDIT A PRODUCT
+function editProduct(id){
+    url = products_url+"/"+id;
+    var init = {
+        method : 'GET',
+        headers : header
+    };
+
+    req = new Request(url,init);
+    status = ""
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        status = res.status;
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        if (status==200){
+            sessionStorage.queried_product = JSON.stringify(data.product);
+
+            console.log(sessionStorage.queried_product);
+
+            // route to the edit page
+            window.location.href = "editproduct.html";
+        }
+        else if(status==401){
+            window.location.href = "index.html";
+        }
+        else{
+            alert("There was a problem getting the product to edit. Try again Later");
+        }
+        
+    })
+    .catch((Error)=>{
+        console.log(Error);
+    });
+}
+
+// a function to fill in product data to the fields in edi product page
+function populateFields() {
+    
+        field_data = JSON.parse(sessionStorage.queried_product);
+        console.log(field_data);
+        
+        getElement('product_id').value = field_data.product_id;
+        getElement('pname').value = field_data.product_name;
+        getElement('Number').value = field_data.quantity;
+        getElement('price').value = field_data.product_price;
+        getElement('image').value = field_data.product_image;
+        getElement('description').innerText = field_data.description;
+
+        //clear the data
+        sessionStorage.queried_product="";
+        console.log(sessionStorage.queried_product);
+  
+
+}
+
+//Update the database details
+function updateProduct() {
+
+    id = getElement('product_id').value
+    console.log("Successfully got the id "+id);
+    console.log("Successfully got the data ");
+
+    
+    url = products_url+"/"+id;
+
+    var init = {
+        method : 'PUT',
+        body : JSON.stringify(getEditData()),
+        headers : header
+    };
+
+    req = new Request(url,init);
+    status = ""
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        status = res.status;
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        if (status==201){
+
+            console.log(data);
+            getElement('message').innerHTML = data.message;
+
+            window.location.href = "products.html";
+
+        }
+        else if(status == 401){
+            alert("Not Authorized to edit a product");
+            window.location.href = "index.html";
+
+        }
+        else{
+            getElement('message').innerHTML = data.message;
+        }
+        
+    })
+    .catch((Error)=>{
+        console.log(Error);
+    });
+}
+function getEditData() {
+    pid =  getElement('product_id').value;
+    pname = getElement('pname').value ;
+    quant = getElement('Number').value;
+    price = getElement('price').value ; 
+    image = getElement('image').value ;
+    desc = getElement('description').value;
+    data = {
+        product_name:pname,
+        product_price:price,
+        product_image:image,
+        quantity:quant,
+        description:desc};
+    console.log(data);
+    return data;
+}
+
+
+// DELETE A PRODUCT
+function deleteProduct(id) {
+    url = products_url+"/"+id;
+    var init = {
+        method : 'DELETE',
+        headers : header
+    };
+
+    req = new Request(url,init);
+    status = ""
+
+    if(confirm("Are you sure you want to delete this product?")){
+        fetch(req)
+        .then((res)=>{
+            console.log(res);
+            status = res.status;
+            return res.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            if (status==200){
+                // route to the edit page
+                window.location.href = "products.html";
+            }
+            else if(status==401){
+                window.location.href = "index.html";
+            }
+            else{
+                alert("There was a problem getting the product to edit. Try again Later");
+            }
+            
+        })
+        .catch((Error)=>{
+            console.log(Error);
+        });
+    }
+    
+
+    
 }

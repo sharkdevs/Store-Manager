@@ -10,6 +10,7 @@
     <!-- font-awesme Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="../static/js/main.js"></script>
+    <script src="../static/js/products.js"></script>
 
 </head>
 <body class="products-body">
@@ -46,10 +47,11 @@
         <div class="title-section">
             <h1><span class="orange">Edit </span>Product<small>(Administrator)</small></h1>
         </div>
-        <div class="sub-title"><h3>Create a product below</h3></div>
+        <div class="sub-title"><h3 id="message"> Update the product</h3></div>
 
         <div class="create-product padding-lr-40">
-            <form action="#" method="post">
+            <form action="#">
+                <input id="product_id" type="hidden" value="">
                 <label for="pname">Product name</label>
                 <input type="text" name="pname " id="pname" value="Samsung wonder Home 56' display ">
 
@@ -63,7 +65,7 @@
                         <input type="text" name="price" id="price" value="Ksh 60,000">
                 </div>
                 <label for="image">Upload Image</label>
-                <input type="file" name="image" id="image">
+                <input type="url" name="image" id="image">
                 <br>
                  
                 <label for="description">Add product description</label>
@@ -71,11 +73,13 @@
 
                         Made In Taiwan, the Sper curved 72' display comes with epic luxury and quality. It has a seven months warranty and an Insurance
                         </textarea>
-                <input class="btn btn-blue" type="submit" value="Update Product">
+                <span class="btn btn-blue"  onclick="updateProduct()">Update Product</span>
             </form>
         </div>
 
       
     </div>
+    <script>document.addEventListener('DOMContentLoaded',populateFields());</script>
+
 </body>
 </html>
