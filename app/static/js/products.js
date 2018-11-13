@@ -229,6 +229,9 @@ function editProduct(id){
             // route to the edit page
             window.location.href = "editproduct.html";
         }
+        else if(status==401){
+            window.location.href = "index.html";
+        }
         else{
             alert("There was a problem getting the product to edit. Try again Later");
         }
@@ -239,8 +242,87 @@ function editProduct(id){
     });
 }
 
+// a function to fill in product data to the fields in edi product page
 function populateFields() {
-    field_data = JSON.parse(sessionStorage.queried_product);
-    console.log(field_data);
     
+        field_data = JSON.parse(sessionStorage.queried_product);
+        console.log(field_data);
+        
+        getElement('product_id').value = field_data.product_id;
+        getElement('pname').value = field_data.product_name;
+        getElement('Number').value = field_data.quantity;
+        getElement('price').value = field_data.product_price;
+        getElement('image').value = field_data.product_image;
+        getElement('description').innerText = field_data.description;
+
+        //clear the data
+        sessionStorage.queried_product="";
+        console.log(sessionStorage.queried_product);
+  
+
+}
+
+//Update the database details
+function updateProduct() {
+
+    id = getElement('product_id').value
+    console.log("Successfully got the id "+id);
+    console.log("Successfully got the data ");
+
+    
+    url = products_url+"/"+id;
+
+    var init = {
+        method : 'PUT',
+        body : JSON.stringify(getEditData()),
+        headers : header
+    };
+
+    req = new Request(url,init);
+    status = ""
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        status = res.status;
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        if (status==201){
+
+            console.log(data);
+            getElement('message').innerHTML = data.message;
+
+            window.location.href = "products.html";
+
+        }
+        else if(status == 401){
+            alert("Not Authorized to edit a product");
+            window.location.href = "index.html";
+
+        }
+        else{
+            getElement('message').innerHTML = data.message;
+        }
+        
+    })
+    .catch((Error)=>{
+        console.log(Error);
+    });
+}
+function getEditData() {
+    pid =  getElement('product_id').value;
+    pname = getElement('pname').value ;
+    quant = getElement('Number').value;
+    price = getElement('price').value ; 
+    image = getElement('image').value ;
+    desc = getElement('description').value;
+    data = {
+        product_name:pname,
+        product_price:price,
+        product_image:image,
+        quantity:quant,
+        description:desc};
+    console.log(data);
+    return data;
 }
