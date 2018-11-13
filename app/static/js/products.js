@@ -149,7 +149,7 @@ function getProducts() {
 
                 // add delete button
                 td = createNode('td')
-                td.innerHTML=`  <i class="fas fa-trash"></i>`;
+                td.innerHTML=`  <i class="fas fa-trash" onclick="deleteProduct(${product['product_id']})"></i>`;
                 td.className="text-red";
                 appendNode(tr,td);
 
@@ -190,7 +190,7 @@ function showProductPane($this){
                 <i class=" text-green fas fa-edit"></i> Edit product
             </a>
         </button>
-        <button onclick="confirmDelete()" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="confirmDelete()"></i> Delete</button></div>
+        <button onclick="deleteProduct(${id})" class=" btn "><i class=" text-red fas fa-trash-alt" onclick="deleteProduct(${id})"></i> Delete</button></div>
     `;
     document.getElementById("product-pane").innerHTML = side_product;
     document.getElementById("product-pane").style.width="400px";
@@ -325,4 +325,46 @@ function getEditData() {
         description:desc};
     console.log(data);
     return data;
+}
+
+
+// DELETE A PRODUCT
+function deleteProduct(id) {
+    url = products_url+"/"+id;
+    var init = {
+        method : 'DELETE',
+        headers : header
+    };
+
+    req = new Request(url,init);
+    status = ""
+
+    if(confirm("Are you sure you want to delete this product?")){
+        fetch(req)
+        .then((res)=>{
+            console.log(res);
+            status = res.status;
+            return res.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            if (status==200){
+                // route to the edit page
+                window.location.href = "products.html";
+            }
+            else if(status==401){
+                window.location.href = "index.html";
+            }
+            else{
+                alert("There was a problem getting the product to edit. Try again Later");
+            }
+            
+        })
+        .catch((Error)=>{
+            console.log(Error);
+        });
+    }
+    
+
+    
 }
