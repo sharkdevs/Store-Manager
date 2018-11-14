@@ -74,11 +74,17 @@ margin: 0px !important;
     border-bottom: 1px dashed orangered;
 }
 textarea,input[type=email],input[type=text],input[type=url], input[type=password]{
-   width: 100%;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ffddff;
+    padding: 8px 20px;
+    box-sizing: border-box;
+ }
+ input[type=number]{
    border-radius: 4px;
    border: 1px solid #ffddff;
-   padding: 8px 20px;
    box-sizing: border-box;
+   color:  black !important;
 }
 .btn{
     border-radius: 4px;
@@ -240,6 +246,7 @@ textarea,input[type=email],input[type=text],input[type=url], input[type=password
     border: 0;
     border-bottom: 1px dashed orange;
 }
+
 .cart-items-payment{
     position: fixed;
     bottom: 0;
@@ -309,19 +316,44 @@ font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 3px;
     padding: 5px 8px;
 }
+.cart-list-of-items{
+    padding: 0 30px 0 5px;
+    background-color: #00c0c0;
+    overflow: scroll;
+    max-height: 350px;
+}
 .in-the-cart{
-    padding: 20px;
+    float: left;
+    padding: 10px;
+    height: auto;
+    display: block;
     width: 100%;
     border-bottom: 1px solid #f0f3f3;
 }
+.in-the-cart #remove-item{
+    float: right;
+    cursor: pointer;
+}
 .in-the-cart .name{
     font-weight: bolder;
-    width: 80%;
+    width: auto;
+    max-width: 50%;
+    min-width: 50%;
     float: left;
+    overflow-wrap: break-word;
 }
 .in-the-cart .price{
-    color: #e5a30e;
-    float: left
+    color: #fff;
+    float: left;
+    overflow-wrap: break-word;
+    max-width: 60px;
+    min-width: 60px; 
+    padding-right: 4px;
+}
+.in-the-cart #purchase-quantity{
+    max-width: 50px;
+    float: left;
+
 }
 
 

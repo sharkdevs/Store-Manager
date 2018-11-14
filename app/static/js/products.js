@@ -160,7 +160,7 @@ function getProducts() {
             rowNum +=1
         });
 
-    })
+    });
 }
 
 // function to open product description view
