@@ -81,6 +81,7 @@
             <div class="cart-items-container">
                 <div class="cart-items-top-bar">
                     <img src="../static/images/Store manager.png" alt="Sales">
+                    <span id="message"></span>
                 </div>
                 <hr>
     
@@ -100,9 +101,9 @@
                     <div class="divider"></div>
                     <div class="payment-conts">
                         <h3 class="total">Total</h3> 
-                        <h1 id="total-display"> Ksh 6000/=</h1>
+                        <h1 id="total-display"> Ksh 0.00/=</h1>
                     </div>
-                    <button onclick="alertPayment()"class="btn btn-orange">Payment</button>
+                    <button id="checkout" onclick="saleOrder()" class="btn btn-orange">Payment</button>
 
                 </div>
             </div>

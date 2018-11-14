@@ -1,6 +1,7 @@
 // Initialize variables
 
 var products_url = 'https://shark-store-v2.herokuapp.com/api/v2/products';
+var sales_url = 'https://shark-store-v2.herokuapp.com/api/v2/sales';
 var header = new Headers({
     "content-type": "application/json",
     "authorization":"Bearer "+JSON.parse(sessionStorage.current_user).auth_token
@@ -8,6 +9,9 @@ var header = new Headers({
 });
 var div_container = document.getElementById('cart-inventory-items');
 var product_item = {};
+var added_to_cart = "";
+
+
 function createNode(node) {
     return document.createElement(node);
 }
@@ -87,11 +91,10 @@ function getClickedItem(){
 
     var id = this.querySelector("#inventory-product-id").innerText;
 
-    console.log(id);
     parentContainer = document.querySelector('#cart-list-of-items');
     
     
-    // add an item if not in the store
+    // add an item if not in the cart
     if(!parentContainer.querySelector(".in-the-cart")){
 
         document.getElementById("cart-added-items").insertAdjacentHTML(
@@ -119,7 +122,6 @@ function getClickedItem(){
     if(in_cart == true)
     {   
         quantity_box = parentContainer.querySelector("[id='"+id+"']").querySelector('#purchase-quantity');
-        console.log(quantity_box.value);
         if(parseInt(quantity_box.value)< product_item[id].quantity) {
             quantity_box.value = parseInt(quantity_box.value) +1;
         }
@@ -138,20 +140,30 @@ function getClickedItem(){
     }
      
     
-    total = calculateTotal();
+    total = calculateTotal()['total'];
+    added_to_cart = calculateTotal()['totals'];
+    added_to_cart.forEach(element => {
+        console.log("Hello"+element.product_id);
+    });
    
     document.getElementById("total-display").innerHTML="Ksh "+total;
     document.getElementById("cart-items-num").innerHTML=getItemsInCart().length;
 }
+
 function calculateTotal() {
     total = 0;
+    totals = []
+
     added_items.forEach(item => {
         var num_items = parseInt(item.querySelector('#purchase-quantity').value);
         var price =  parseInt(item.querySelector('.price').innerText);
         subtotal = num_items * price;
         total = total + subtotal;
+        totals.push({"product_id":item.id,"quantity":num_items});
+
     });
-    return total;
+    console.log(totals)
+    return {"total":total,"totals":totals};
 }
 function removeProduct($this) {
     $this.parentElement.parentElement.removeChild($this.parentElement);
@@ -163,5 +175,71 @@ function getItemsInCart(){
     return document.getElementsByClassName("in-the-cart");
 }
 
+// invoked when sale button is clicked
+function saleOrder() {
+        
+        added_to_cart.forEach(element => {
+            id = element.product_id;
+            quantity = element.quantity;
+
+            data = {"product_id":id,"quantity":quantity};
+            makeSale(data);
+        });
+}
 
 // Perform actual sales
+function makeSale(data) {
+    var init = {
+        method : 'POST',
+        body : JSON.stringify(data),
+        headers : header
+    
+    };
+
+    var status = "";
+    req = new Request(sales_url, init);
+    console.log(data);
+
+
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        status = res.status;
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        if (status==401){
+            window.location.href = "index.html";
+        }
+        if (status==201){
+                message_box = document.getElementById('message');
+                message_box.innerHTML=data.message;
+                message_box.className = "success";
+                message_box.style.visibility = 'visible';
+            setTimeout(() => {
+                message_box.style.visibility = 'hidden';
+            }, 3000);
+            
+            sold_items = parentContainer.querySelectorAll('.in-the-cart');
+
+            sold_items.forEach(item => {
+                item.parentElement.removeChild(item);
+            });
+
+        }
+        else{
+            message_box = document.getElementById('message');
+                message_box.innerHTML=data.message;
+                message_box.className = "danger";
+                message_box.style.visibility = 'visible';
+            setTimeout(() => {
+                message_box.style.visibility = 'hidden';
+            }, 3000);
+        }
+
+    })
+    .catch((Error)=>{
+        console.log(Error);
+    });
+}

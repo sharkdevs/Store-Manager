@@ -552,3 +552,20 @@ input[type=date]{
 .dash-tabs ul li:nth-child(1n){
     margin-left: 70px;
 }
+.success {
+    background-color: #28a745 !important;
+    color: #eeeeee
+}
+.danger {
+    background-color: #dc3545 !important;
+    color: #eeeeee
+}
+#message{
+    padding: 10px;
+    float: left;
+    width: 100%;
+    margin: 0 20px 0 0;
+    visibility: hidden;
+
+
+}
