@@ -44,25 +44,7 @@ function alertPayment(){
     alert("Thanks for allowing us to serve you. Bye");
 }
 
-// this function gets the specific item clicked and inserts it in the cart
-function getClickedItem($this){
-    var itemName=$this.querySelector(".item-title").innerText;
-    var price=$this.querySelector(".item-price").innerText;
-    var available=$this.querySelector(".quantity").innerText;
 
-    
-    document.getElementById("cart-added-items").insertAdjacentHTML(
-        "afterend",
-        '<div class="in-the-cart"> <span class="name">'+itemName+'</span><span class="price">'+price+'</span></div>'
-        
-
-    );
-    document.getElementById("cart-items-num").innerHTML=getItemsInCart().length;
-}
-
-function getItemsInCart(){
-    return document.getElementsByClassName("in-the-cart");
-}
 
 
 
