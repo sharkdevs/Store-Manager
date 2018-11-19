@@ -4,7 +4,11 @@
 */
 
 function processLogin() {
-    document.getElementById('login').style.backgroundColor="#0aacad";
+
+    document.getElementById('login').style.backgroundColor="#0aacad"; 
+    displayLoading();
+    
+
     
     // Define variables for use in the app
     let url = 'https://shark-store-v2.herokuapp.com/api/v2/auth/login';
@@ -35,6 +39,7 @@ function processLogin() {
         document.getElementById("message").innerHTML=data.message;
 
         if(data.auth_token){
+            displayMessage(data,"success");
             // pass auth headers to the respective page
             console.log(data.auth_token);
             current_user = {'auth_token':data.auth_token,'email':login_data.email};
@@ -78,12 +83,29 @@ function processLogin() {
             
         }
         else{
-            document.getElementById('message').innerHTML = data.message;
+            displayMessage(data,"danger")
         }
     })
     .catch((error) =>{
         console.log(error);
     });
+}
+// function to display response messages
+function displayMessage(data,type) {
+    res_message = document.getElementById('message');
+    res_message.className = type;
+    res_message.innerHTML = data.message;
+    res_message.style.visibility = 'visible';
+    setTimeout(() => {
+        res_message.style.visibility = 'hidden';
+    }, 3000);
+}
+
+function displayLoading(){
+    msf = document.getElementById('message');
+    msf.style.visibility = "visible";
+    msf.className = "loading";
+    msf.innerHTML = "Loading...";
 }
 
 // function to get the input data fro,m the login form

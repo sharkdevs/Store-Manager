@@ -1,15 +1,23 @@
 // Initialize variables
+if (!sessionStorage.current_user) {
+    window.location.href = "index.html";
+}
+else{
+    var products_url = 'https://shark-store-v2.herokuapp.com/api/v2/products';
+    var sales_url = 'https://shark-store-v2.herokuapp.com/api/v2/sales';
+    var header = new Headers({
+        "content-type": "application/json",
+        "authorization":"Bearer "+JSON.parse(sessionStorage.current_user).auth_token
 
-var products_url = 'https://shark-store-v2.herokuapp.com/api/v2/products';
-var sales_url = 'https://shark-store-v2.herokuapp.com/api/v2/sales';
-var header = new Headers({
-    "content-type": "application/json",
-    "authorization":"Bearer "+JSON.parse(sessionStorage.current_user).auth_token
+    });
+    var div_container = document.getElementById('cart-inventory-items');
+    var product_item = {};
+    var added_to_cart = "";
+    var sales_record = {};
 
-});
-var div_container = document.getElementById('cart-inventory-items');
-var product_item = {};
-var added_to_cart = "";
+    sales_table = document.getElementById('tbl-products');
+
+}
 
 
 function createNode(node) {
@@ -242,4 +250,88 @@ function makeSale(data) {
     .catch((Error)=>{
         console.log(Error);
     });
+}
+
+
+// Get all sales records
+function getAllSales() {
+    if (!sessionStorage.current_user) {
+        window.location.href = "index.html";
+    }
+    var init = {
+        method : 'GET',
+        headers : header
+    
+    };
+
+    req = new Request(sales_url,init)
+
+    fetch(req)
+    .then((res)=>{
+        console.log(res);
+        status = res.status
+        return res.json();
+    })
+    .then((data)=>{
+        if (status==401){
+            window.location.href = "index.html";
+        }
+
+        rowNum = 1; //the row id
+        data['Sales Record'].forEach(sale => {
+
+            // save the queried data in a list for ease of retrieving
+
+            sales_record[sale['sales_id']] = {
+                "user_id": sale['user_id'],
+                "product_id": sale['product_id'],
+                "quantity": sale['quantity'],
+                "sales_amount": sale['sales_amount'],
+                "sales_date": sale['sales_date']
+            };
+            console.log(sales_record)
+            sales_table = document.getElementById('tbl-products')
+            let tr = createNode('tr'),
+                td = createNode('td');
+                
+
+            // table data
+            t_data=[
+                rowNum,sale['product_name'],
+                sale['username'],
+                sale['sales_date'],
+                sale['sales_amount']
+            ];
+            console.log(t_data)
+
+            tr = addTableData(tr,td,t_data);
+            console.log(tr);
+
+
+            // add the view edit and delete buttons
+            td = createNode('td')
+            td.innerHTML=`  <i id="${sale['sales_id']}" onclick="showProductPane(this)" class="fas fa-eye"> </i>`;
+            td.className="text-green";
+            appendNode(tr,td);
+            console.log("here")
+
+          
+          
+
+            appendNode(sales_table,tr);
+            rowNum +=1
+        });
+
+    });
+}
+function addTableData(tr,td,data){
+    console.log(data)
+    data.forEach(dt => {
+       td=createNode('td');
+        td.innerHTML = `${dt}`;
+        console.log(dt);
+        appendNode(tr,td);
+    });
+
+    return tr
 }
