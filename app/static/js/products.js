@@ -10,6 +10,7 @@ let  product_item = {} ;
 
 
 function createProduct() {
+    displayLoading();
     var init = {
         method : 'POST',
         body : JSON.stringify(getProductData()),
@@ -30,8 +31,15 @@ function createProduct() {
         if (status==401){
             window.location.href = "index.html";
         }
+        if(status==201){
+            displayMessage(data,"success")
 
-        getElement('message').innerHTML=data.message;
+        }
+        else{
+            displayMessage(data,"danger")
+
+        }
+
     })
     .catch((Error)=>{
         console.log(Error);
@@ -367,4 +375,19 @@ function deleteProduct(id) {
     
 
     
+}
+function displayMessage(data,type) {
+    res_message = document.getElementById('message');
+    res_message.className = type;
+    res_message.innerHTML = data.message;
+    res_message.style.visibility = 'visible';
+    setTimeout(() => {
+        res_message.style.visibility = 'hidden';
+    }, 3000);
+}
+function displayLoading(){
+    msf = document.getElementById('message');
+    msf.style.visibility = "visible";
+    msf.className = "loading";
+    msf.innerHTML = "Loading...";
 }

@@ -569,3 +569,7 @@ input[type=date]{
 
 
 }
+.loading{
+    background-color: #00c0c0;
+    color: #f0f3f3;
+}

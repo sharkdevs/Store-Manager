@@ -83,8 +83,8 @@
                 </ul>
             </div>
             <!-- table of products -->
-            <div class="tbl-products">
-                    <table>
+            <div class="tbl-products" >
+                    <table id="tbl-products">
                         <thead>
                             <td>#</td>
                             <td>Product Name</td>
@@ -95,111 +95,16 @@
                            
                         </thead>
                         <tbody>
-                            <tr class="tbl-product-row">
-                                <td>1</td>
-                                <td>Cherry Beans cappuccino 3kg </td>
-                                <td>Meshack Ogeto</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 400</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>2</td>
-                                <td>Men's Khaki Trousers </td>
-                                <td>Valeria Mank</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 1000</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                </i></td>
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>3</td>
-                                <td>Cherry Beans shorts </td>
-                                <td>Alice Best</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 400</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>4</td>
-                                <td>Dark Blue African Tshirt</td>
-                                <td>Meshack Ogeto</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 580</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>5</td>
-                                <td>Maroon Commando Tshirt with Swag</td>
-                                <td>Valeria Mank</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 650</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>6</td>
-                                <td>Infinix Noted Pen 10</td>
-                                <td>Meshack Ogeto</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 13,000</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>7</td>
-                                <td>Rja House Phone</td>
-                                <td>Valeria Mank</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 7890</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>8</td>
-                                <td>Vaccuum Cleaner Tiger Brand</td>
-                                <td>Alice Best</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 90,000</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>9</td>
-                                <td>Lemon Flavoured Home detergent</td>
-                                <td>Alice Best</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 560</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
-                            <tr class="tbl-product-row">
-                                <td>10</td>
-                                <td>The other Home cleaner washing detergent </td>
-                                <td>Valeria Mank</td>
-                                <td>23/10/2018</td>
-                                <td>Ksh 140</td>
-                                <td class="text-green"><i onclick="showProductPane()" class="fas fa-eye"></i></td>
-                                
-                                
-                            </tr>
+                            
+                       
+                           
                         </tbody>
                     </table>
                 </div>
             
         </div>
-    
+    <!-- scripts -->
+    <script src="../static/js/sales.js"></script>
+    <script>window.onload = getAllSales();</script>
 </body>
 </html>
