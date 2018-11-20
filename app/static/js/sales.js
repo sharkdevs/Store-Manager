@@ -97,7 +97,15 @@ function loadProducts() {
     });
 }
 
-
+function validateQuantity($this) {
+    
+    if (parseInt($this.value) > $this.max) {
+        $this.value = $this.max;
+    }
+    if($this.value<=0){
+        $this.value = 1;
+    }
+}
 // this function gets the specific item clicked and inserts it in the cart
 function getClickedItem(){
 
@@ -114,7 +122,7 @@ function getClickedItem(){
             `<div id="${id}" class="in-the-cart">
                 <span class="name">${product_item[id].product_name}</span>
                 <span class="price">${product_item[id].product_price}</span>
-                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" />
+                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" onkeyup="validateQuantity(this)"/>
                 <i id="remove-item" class=" text-red fas fa-trash" onclick="removeProduct(this)"></i>
             </div>`
         );
@@ -145,7 +153,7 @@ function getClickedItem(){
             `<div id="${id}" class="in-the-cart">
                 <span class="name">${product_item[id].product_name}</span>
                 <span class="price">${product_item[id].product_price}</span>
-                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" />
+                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" onkeyup="validateQuantity(this)"/>
                 <i id="remove-item" class=" text-red fas fa-trash" onclick="removeProduct(this)"></i>
             </div>`
         );
