@@ -56,35 +56,39 @@ function loadProducts() {
         data['products in stock'].forEach(product => {
             console.log(product['product_name']);
 
-            // save the queried data in a list for ease of retrieving
+            // check product quantity
+            if(product['quantity']>0){
+                // save the queried data in a list for ease of retrieving
 
-            product_item[product['product_id']] = {
-                "product_image":product['product_image'],
-                "product_name":product['product_name'],
-                "description":product['description'],
-                "product_price":product['product_price'],
-                "quantity":product['quantity']
-            };
+                product_item[product['product_id']] = {
+                    "product_image":product['product_image'],
+                    "product_name":product['product_name'],
+                    "description":product['description'],
+                    "product_price":product['product_price'],
+                    "quantity":product['quantity']
+                };
 
-            div = createNode('div');
-            div.setAttribute("class", "crt-inv-item");
-            div.setAttribute("id", ""+product['product_id']);
-            div.onclick= getClickedItem;     
-            console.log(div);
+                div = createNode('div');
+                div.setAttribute("class", "crt-inv-item");
+                div.setAttribute("id", ""+product['product_id']);
+                div.onclick= getClickedItem;     
+                console.log(div);
 
-            
-            div.innerHTML = `
-                <span id="inventory-product-id" hidden="true">${product['product_id']}</span>
-                <div class="crt-inv-item-img"><img src="${product['product_image']}" alt="Product"></div>
-                <div class="crt-inv-item-desc" id="item-desc" ><p class="item-title">${product['product_name']}<br> </p>
-                    <div class="pricing">
-                        <span class="item-price">Ksh ${product['product_price']}</span>
-                        <span class="quantity">${product['quantity']}</span>
+                
+                div.innerHTML = `
+                    <span id="inventory-product-id" hidden="true">${product['product_id']}</span>
+                    <div class="crt-inv-item-img"><img src="${product['product_image']}" alt="Product"></div>
+                    <div class="crt-inv-item-desc" id="item-desc" ><p class="item-title">${product['product_name']}<br> </p>
+                        <div class="pricing">
+                            <span class="item-price">Ksh ${product['product_price']}</span>
+                            <span class="quantity">${product['quantity']}</span>
+                        </div>
                     </div>
-                </div>
-            `;  
+                `;  
+                
+                appendNode(div_container,div);
+            }
             
-            appendNode(div_container,div);
         });
 
     })
@@ -93,7 +97,17 @@ function loadProducts() {
     });
 }
 
-
+function validateQuantity($this) {
+    
+    if (parseInt($this.value) > $this.max) {
+        $this.value = $this.max;
+    }
+    if($this.value<=0){
+        $this.value = 1;
+    }
+    total = calculateTotal();
+    document.getElementById("total-display").innerHTML="Ksh "+total['total'];
+}
 // this function gets the specific item clicked and inserts it in the cart
 function getClickedItem(){
 
@@ -110,11 +124,13 @@ function getClickedItem(){
             `<div id="${id}" class="in-the-cart">
                 <span class="name">${product_item[id].product_name}</span>
                 <span class="price">${product_item[id].product_price}</span>
-                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" />
+                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" onkeyup="validateQuantity(this)"/>
                 <i id="remove-item" class=" text-red fas fa-trash" onclick="removeProduct(this)"></i>
             </div>`
         );
     }
+   else
+   {
     added_items = parentContainer.querySelectorAll('.in-the-cart');
     in_cart = false; 
 
@@ -141,11 +157,12 @@ function getClickedItem(){
             `<div id="${id}" class="in-the-cart">
                 <span class="name">${product_item[id].product_name}</span>
                 <span class="price">${product_item[id].product_price}</span>
-                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" />
+                <input type="number" value="1" min=1 max=${product_item[id].quantity} id="purchase-quantity" onkeyup="validateQuantity(this)"/>
                 <i id="remove-item" class=" text-red fas fa-trash" onclick="removeProduct(this)"></i>
             </div>`
         );
     }
+   }
      
     
     total = calculateTotal()['total'];
@@ -176,7 +193,7 @@ function calculateTotal() {
 function removeProduct($this) {
     $this.parentElement.parentElement.removeChild($this.parentElement);
     total = calculateTotal();
-    document.getElementById("total-display").innerHTML="Ksh " + total; 
+    document.getElementById("total-display").innerHTML="Ksh " + total['total']; 
 
 }
 function getItemsInCart(){
