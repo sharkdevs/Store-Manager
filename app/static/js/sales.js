@@ -105,6 +105,8 @@ function validateQuantity($this) {
     if($this.value<=0){
         $this.value = 1;
     }
+    total = calculateTotal();
+    document.getElementById("total-display").innerHTML="Ksh "+total['total'];
 }
 // this function gets the specific item clicked and inserts it in the cart
 function getClickedItem(){
@@ -127,6 +129,8 @@ function getClickedItem(){
             </div>`
         );
     }
+   else
+   {
     added_items = parentContainer.querySelectorAll('.in-the-cart');
     in_cart = false; 
 
@@ -158,6 +162,7 @@ function getClickedItem(){
             </div>`
         );
     }
+   }
      
     
     total = calculateTotal()['total'];
@@ -188,7 +193,7 @@ function calculateTotal() {
 function removeProduct($this) {
     $this.parentElement.parentElement.removeChild($this.parentElement);
     total = calculateTotal();
-    document.getElementById("total-display").innerHTML="Ksh " + total; 
+    document.getElementById("total-display").innerHTML="Ksh " + total['total']; 
 
 }
 function getItemsInCart(){
